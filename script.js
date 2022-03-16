@@ -6,16 +6,25 @@
     document.addEventListener("DOMContentLoaded", function() {
         
         let c = document.getElementById("clock");
+        c.style.color = "red";
        
         //setTimeout(updateClock, 2000);
-        setInterval(updateClock, 1000);
+        setInterval(updateClock, 500);
         
         function updateClock() {
             
             let date = new Date();
-            let h = date.getHours();
+            //let h = date.getHours();
+            let h = date.getHours() % 12 || 12;
+            //let h = date.toLocaleString([], { hour12: true});
             let m = date.getMinutes();
             let s = date.getSeconds();
+
+            let h24 = date.getHours();
+           
+            // let c = date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+            //c.innerHTML = c;
+
 
             if (h < 10) {
                 h = "0" + h;
@@ -29,7 +38,14 @@
                 s = "0" + s;
             }
 
-            c.innerHTML = h + ":" + m + ":" + s;
+        /*    if (h24 < 10) {
+                let b = "AM";
+            } else {
+                b = "PM";
+            }
+        */
+       
+            c.innerHTML = h + ":" + m + ":" + s + " ";
             
         };
         
