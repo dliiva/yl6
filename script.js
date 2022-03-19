@@ -21,10 +21,6 @@
             let s = date.getSeconds();
 
             let h24 = date.getHours();
-           
-            // let c = date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
-            //c.innerHTML = c;
-
 
             if (h < 10) {
                 h = "0" + h;
