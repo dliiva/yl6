@@ -72,11 +72,28 @@ lisage vormile sisendi kontroll: tekstiväljad ei tohi olla tühjad, ei tohi sis
         let linn = document.getElementById("linn");
         let eesnimi = document.getElementById("fname");
         let perenimi = document.getElementById("lname");
+        let nimi = [];
+        nimi.push(eesnimi.value);
+        nimi.push(perenimi.value);
+        
+
+        function nameCheck() {
+            
+            for (let i = 0; i < nimi.length; i++) {
+                for (let v = 0; v < nimi[i].length; v++) {
+                    let h = nimi[i][v];
+                    let k = isFinite(h);
+                    if (k === true) {
+                        return false;
+                    }
+                }
+            }
+        }
         
 
         function radioOn() {
             let radio1 = document.getElementById("r1").checked;
-            let radio2 = document.getElementById("r1").checked;
+            let radio2 = document.getElementById("r2").checked;
 
             if (radio1 === true) {
                 return true;
@@ -97,6 +114,12 @@ lisage vormile sisendi kontroll: tekstiväljad ei tohi olla tühjad, ei tohi sis
             return;
             
         } else if (radioOn() === false) {
+
+            alert("Palun täitke kõik väljad korrektselt");
+
+            return;
+
+        }  else if (nameCheck() === false) {
 
             alert("Palun täitke kõik väljad korrektselt");
 
