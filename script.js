@@ -38,14 +38,15 @@
                 s = "0" + s;
             }
 
-        /*    if (h24 < 10) {
+            let b;
+            if (h24 < 10) {
                 let b = "AM";
             } else {
                 b = "PM";
             }
-        */
+        
        
-            c.innerHTML = h + ":" + m + ":" + s + " ";
+            c.innerHTML = h + ":" + m + ":" + s + " " + b;
             
         };
         
