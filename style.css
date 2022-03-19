@@ -82,6 +82,11 @@ input[type=submit] {
     cursor: pointer;
 }
 
+/* siin on minu looming */
+#radiobutton label {
+    font-weight: 600;    
+}
+
 #map {
     position: relative;
     width: 1000px;

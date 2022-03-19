@@ -70,7 +70,24 @@ lisage vormile sisendi kontroll: tekstiväljad ei tohi olla tühjad, ei tohi sis
         event.preventDefault();
         
         let linn = document.getElementById("linn");
+        let eesnimi = document.getElementById("fname");
+        let perenimi = document.getElementById("lname");
         
+
+        function radioOn() {
+            let radio1 = document.getElementById("r1").checked;
+            let radio2 = document.getElementById("r1").checked;
+
+            if (radio1 === true) {
+                return true;
+            } else if (radio2 === true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+
         if (linn.value === "") {
             
             alert("Palun valige linn nimekirjast");
@@ -79,10 +96,49 @@ lisage vormile sisendi kontroll: tekstiväljad ei tohi olla tühjad, ei tohi sis
             
             return;
             
+        } else if (radioOn() === false) {
+
+            alert("Palun täitke kõik väljad korrektselt");
+
+            return;
+
+        } else if (eesnimi.value === "") {
+
+            alert("Palun täitke kõik väljad korrektselt");
             
+            eesnimi.focus();
+
+            return;
+
+        } else if (perenimi.value === "") {
+
+            alert("Palun täitke kõik väljad korrektselt");
+            
+            perenimi.focus();
+
+            return;
+
+        } else if (linn.value === "tln") {
+
+            e.innerHTML = "0.00 &euro;";
+
+            return;
+
+        } else if (linn.value === "trt") {
+
+            e.innerHTML = "2.5 &euro;";
+
+            return;
+
+        } else if (linn.value === "nrv") {
+
+            e.innerHTML = "2.5 &euro;";
+
+            return;
+
         } else {
             
-            e.innerHTML = "x,xx &euro;";
+            e.innerHTML = "3.00 &euro;";
             
         }        
         
