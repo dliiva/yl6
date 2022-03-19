@@ -14,9 +14,7 @@
         function updateClock() {
             
             let date = new Date();
-            //let h = date.getHours();
             let h = date.getHours() % 12 || 12;
-            //let h = date.toLocaleString([], { hour12: true});
             let m = date.getMinutes();
             let s = date.getSeconds();
 
@@ -49,17 +47,6 @@
     });
     
     // forms
-
-    /*
-lisage interaktiivsus Tarne hind nupule: nupul vajutamisel peaks kasutaja mugaval vormil teada saama, 
-palju tal tuleb tarne eest maksta (valikute hinnad on koodis kommentaaridena kirjas);
-
-täiendage olemasolev vorm raadionuppudega (radiobutton), mille sisu valige ise (aga olgu ikkagi kuidagi seotud tarnega), 
-ja kujundage see style.css failis (css-faili uue osa juurde lisage kommentaar siin on minu looming);
-
-lisage vormile sisendi kontroll: tekstiväljad ei tohi olla tühjad, ei tohi sisaldada numbreid, 
-üks raadionuppudest peab olema valitud (vastasel juhul visatakse ette alert aken) jne.;
-    */
     
     document.getElementById("form").addEventListener("submit", estimateDelivery);
     
@@ -211,8 +198,6 @@ function GetMap() {
         title: 'Tartu Ülikool',
         });
 
-
-    //Add a click event handler to the pushpin.
     Microsoft.Maps.Events.addHandler(pushpinT, 'click', pushpinClicked);
     
     map.entities.push(pushpinT);
